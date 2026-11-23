@@ -1,0 +1,11 @@
+{
+  "redirects": [
+    { "source": "/about", "destination": "/#person", "permanent": true },
+    { "source": "/work", "destination": "/#work", "permanent": true },
+    { "source": "/work/:path*", "destination": "/#work", "permanent": true },
+    { "source": "/blog", "destination": "/#journey", "permanent": true },
+    { "source": "/blog/:path*", "destination": "/#journey", "permanent": true },
+    { "source": "/gallery", "destination": "/#off-screen", "permanent": true },
+    { "source": "/contact", "destination": "/#contact", "permanent": true }
+  ]
+}
