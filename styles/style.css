@@ -227,19 +227,58 @@
 
     /* Print Styles for Clean CV Export */
     @media print {
-      body * {
-        visibility: hidden;
+      @page {
+        margin: 12mm;
       }
-      #cv-printable-sheet,
-      #cv-printable-sheet * {
-        visibility: visible;
+
+      html,
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
       }
+
+      body > * {
+        display: none !important;
+      }
+
+      body > #cv-modal {
+        display: block !important;
+        position: static !important;
+        width: auto !important;
+        height: auto !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        overflow: visible !important;
+      }
+
+      #cv-modal > div {
+        display: block !important;
+        width: auto !important;
+        max-width: none !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        background: #ffffff !important;
+        border: 0 !important;
+        box-shadow: none !important;
+      }
+
+      #cv-modal > div > :not(#cv-printable-sheet) {
+        display: none !important;
+      }
+
       #cv-printable-sheet {
-        position: fixed;
-        inset: 0;
+        display: block !important;
+        position: static !important;
+        margin: 0 !important;
+        padding: 0 !important;
         background: #ffffff !important;
         color: #111111 !important;
-        padding: 24px !important;
-        z-index: 99999;
+      }
+
+      #cv-printable-sheet * {
+        color: #111111 !important;
       }
     }
