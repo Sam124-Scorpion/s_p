@@ -252,10 +252,9 @@
         });
       }
 
-      // CV Modal & Direct Text/Markdown Download
+      // CV Modal
       const cvModal = document.getElementById('cv-modal');
       const closeCvModalBtn = document.getElementById('close-cv-modal');
-      const downloadCvTxtBtn = document.getElementById('download-cv-txt-btn');
 
       function openCvModal() {
         if (!cvModal) return;
@@ -278,52 +277,6 @@
       if (cvModal) {
         cvModal.addEventListener('click', (e) => {
           if (e.target === cvModal) closeCvModal();
-        });
-      }
-
-      if (downloadCvTxtBtn) {
-        downloadCvTxtBtn.addEventListener('click', () => {
-          const cvContent = [
-            'SOUMIK DAS (SAM)',
-            'Full-Stack Web & Data Science / AI Engineer',
-            'Location: Cooch Behar, West Bengal, India',
-            'Email: soumikdas261@gmail.com | Phone: +918942862272',
-            'LinkedIn: https://www.linkedin.com/in/sam124/ | GitHub: https://github.com/Sam124-Scorpion',
-            '',
-            'EDUCATION',
-            '- B.Tech CSE (Data Science), Brainware University (2022–2026) — 9.02/10 CGPA',
-            '- Higher Secondary (12th), Cooch Behar Rambhola High School, WBCHSE (2020–2022) — 82%',
-            '- Secondary (10th), Maharaja Nripendra Narayan High School, WBBSE (2018–2020) — 84%',
-            '',
-            'EXPERIENCE',
-            '- Industry Intern - Web Dev (Django + AI) | Euphoria GenX Pvt. Ltd. (Brainware University) | Aug 2025 – Nov 2025',
-            '  Built an AI-integrated expense management system using Python/Django (MVT) and 8+ REST APIs, cutting manual data entry by 85%; earned dual certifications.',
-            '- Machine Learning Intern | Indus Net Technologies | Feb 2025 – Mar 2025',
-            '  Built an end-to-end sentiment analysis pipeline using Python, Pandas, and Scikit-Learn achieving 87%+ accuracy.',
-            '',
-            'SELECTED PROJECTS',
-            '- Resume Parser with RAG (Architect): Python, Streamlit, LangChain, FAISS — up to 85% screening time reduction.',
-            '- Housing Price Prediction (Developer): FastAPI, Python, Scikit-learn — 89% prediction accuracy REST API.',
-            '- Daily Expense Manager (Developer): Python, Django, React.js, SQLite3 — 10+ spending categories & AI budget advice.',
-            '- Predo — Attendance Predictor (Developer): Python, Streamlit, Pandas, Matplotlib — 10+ records & 5+ visualizations.',
-            '',
-            'TECHNICAL TOOLKIT',
-            '- Languages & Scripting: Python, SQL, C++',
-            '- Frameworks, Libraries & AI/Data: Django, FastAPI, React, Streamlit, LangChain, FAISS, Pandas, Scikit-Learn, Matplotlib, EDA, RAG',
-            '- Databases & Tools: PostgreSQL, MySQL, SQLite, MongoDB, Git, GitHub, Postman',
-            '- Languages Spoken: Bengali, English, Hindi',
-          ].join('\n');
-
-          const blob = new Blob([cvContent], { type: 'text/plain;charset=utf-8' });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = 'Soumik_Das_SAM_CV.txt';
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          URL.revokeObjectURL(url);
-          showToast('CV DOWNLOADED');
         });
       }
 
