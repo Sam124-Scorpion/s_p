@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,8 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
   <link rel="stylesheet" href="./styles/style.css" />
 
   <!-- Tailwind CSS -->
@@ -26,8 +26,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-K78BFMFZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+  </script>
 
 </head>
+
 <body class="bg-obsidian text-bone selection:bg-signal selection:text-bone">
   <!-- Subtle Ambient Grain & Custom Pointer Followers -->
   <div class="noise-overlay" aria-hidden="true"></div>
@@ -40,35 +47,15 @@
   <div id="universe-preloader" role="status" aria-live="polite" aria-label="Loading Personal Universe">
     <div class="preloader-square mb-8">
       <!-- Two Thin Rotating Concentric Elliptical SVG Rings -->
-      <svg
-        class="absolute inset-0 w-full h-full pointer-events-none overflow-visible"
-        viewBox="0 0 180 180"
-        fill="none"
-        aria-hidden="true"
-      >
+      <svg class="absolute inset-0 w-full h-full pointer-events-none overflow-visible" viewBox="0 0 180 180" fill="none"
+        aria-hidden="true">
         <g class="ring-spin-cw">
-          <ellipse
-            cx="90"
-            cy="90"
-            rx="104"
-            ry="44"
-            transform="rotate(-24 90 90)"
-            stroke="#F4F1EA"
-            stroke-opacity="0.45"
-            stroke-width="1"
-          />
+          <ellipse cx="90" cy="90" rx="104" ry="44" transform="rotate(-24 90 90)" stroke="#F4F1EA" stroke-opacity="0.45"
+            stroke-width="1" />
         </g>
         <g class="ring-spin-ccw">
-          <ellipse
-            cx="90"
-            cy="90"
-            rx="104"
-            ry="44"
-            transform="rotate(34 90 90)"
-            stroke="#F4F1EA"
-            stroke-opacity="0.3"
-            stroke-width="1"
-          />
+          <ellipse cx="90" cy="90" rx="104" ry="44" transform="rotate(34 90 90)" stroke="#F4F1EA" stroke-opacity="0.3"
+            stroke-width="1" />
         </g>
       </svg>
 
@@ -80,15 +67,13 @@
 
     <!-- Monospace Loading Counter & Progress Bar -->
     <div class="w-64 sm:w-72 flex flex-col items-center">
-      <div class="w-full flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.22em] text-bone/90 mb-2.5">
+      <div
+        class="w-full flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.22em] text-bone/90 mb-2.5">
         <span>LOADING PERSONAL UNIVERSE</span>
         <span id="preloader-percent" class="text-[#FF7A6B] font-semibold">0%</span>
       </div>
       <div class="w-full h-[2px] bg-bone/15 overflow-hidden rounded-full">
-        <div
-          id="preloader-bar"
-          class="h-full w-0 bg-[#FF7A6B] transition-none"
-        ></div>
+        <div id="preloader-bar" class="h-full w-0 bg-[#FF7A6B] transition-none"></div>
       </div>
     </div>
   </div>
@@ -96,18 +81,13 @@
   <!-- =========================================================
        STICKY TOP NAVIGATION BAR (Reveals cleanly in Stage 3)
   ========================================================== -->
-  <header
-    id="main-navbar"
-    class="fixed top-0 left-0 right-0 z-40 h-16 sm:h-[72px] bg-obsidian/85 backdrop-blur-md hairline-b opacity-0 -translate-y-full pointer-events-none transition-all duration-500"
-  >
+  <header id="main-navbar"
+    class="fixed top-0 left-0 right-0 z-40 h-16 sm:h-[72px] bg-obsidian/85 backdrop-blur-md hairline-b opacity-0 -translate-y-full pointer-events-none transition-all duration-500">
     <div class="max-w-[1440px] h-full mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between gap-4">
       <!-- Left: Brand Mark -->
-      <a
-        href="#hero"
-        data-scroll-to="#hero"
-        class="flex items-center gap-2.5 group focus:outline-none"
-      >
-        <span class="font-display font-extrabold text-base sm:text-lg tracking-wider text-bone group-hover:text-signal transition-colors">
+      <a href="#hero" data-scroll-to="#hero" class="flex items-center gap-2.5 group focus:outline-none">
+        <span
+          class="font-display font-extrabold text-base sm:text-lg tracking-wider text-bone group-hover:text-signal transition-colors">
           SOUMIK <sup class="text-[10px] font-mono text-signal">®</sup>
         </span>
         <span class="text-bone/25 font-mono text-xs">/</span>
@@ -128,13 +108,8 @@
       </div>
 
       <!-- Right: Chapters Drawer Trigger -->
-      <button
-        type="button"
-        id="open-chapters-btn"
-        aria-expanded="false"
-        aria-controls="chapters-drawer"
-        class="magnet-target inline-flex items-center gap-2.5 px-4 py-2 rounded-sm bg-surface hover:bg-surfaceHover hairline-all hover:border-signal transition-colors font-mono text-xs uppercase tracking-[0.18em] text-bone"
-      >
+      <button type="button" id="open-chapters-btn" aria-expanded="false" aria-controls="chapters-drawer"
+        class="magnet-target inline-flex items-center gap-2.5 px-4 py-2 rounded-sm bg-surface hover:bg-surfaceHover hairline-all hover:border-signal transition-colors font-mono text-xs uppercase tracking-[0.18em] text-bone">
         <span>CHAPTERS</span>
         <span class="text-signal font-bold text-sm leading-none">+</span>
       </button>
@@ -144,17 +119,12 @@
   <!-- =========================================================
        FULL-HEIGHT CHAPTERS NAVIGATION DRAWER
   ========================================================== -->
-  <div
-    id="chapters-backdrop"
+  <div id="chapters-backdrop"
     class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"
-    aria-hidden="true"
-  ></div>
+    aria-hidden="true"></div>
 
-  <aside
-    id="chapters-drawer"
-    aria-label="Chapter Navigation Drawer"
-    class="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-[#0B0B0C] hairline-l translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] flex flex-col justify-between p-6 sm:p-10 overflow-y-auto"
-  >
+  <aside id="chapters-drawer" aria-label="Chapter Navigation Drawer"
+    class="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-[#0B0B0C] hairline-l translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] flex flex-col justify-between p-6 sm:p-10 overflow-y-auto">
     <div>
       <div class="flex items-center justify-between pb-6 hairline-b">
         <div>
@@ -165,54 +135,67 @@
             SOUMIK DAS — SAM
           </span>
         </div>
-        <button
-          type="button"
-          id="close-chapters-btn"
-          class="px-3.5 py-2 rounded-sm bg-surface hairline-all hover:border-signal font-mono text-xs uppercase tracking-[0.18em] text-bone hover:text-signal transition-colors"
-        >
+        <button type="button" id="close-chapters-btn"
+          class="px-3.5 py-2 rounded-sm bg-surface hairline-all hover:border-signal font-mono text-xs uppercase tracking-[0.18em] text-bone hover:text-signal transition-colors">
           CLOSE ×
         </button>
       </div>
 
       <nav class="mt-6 flex flex-col divide-y divide-bone/10">
-        <button type="button" data-drawer-link="#intro-cover" class="py-3.5 flex items-center justify-between text-left group">
+        <button type="button" data-drawer-link="#intro-cover"
+          class="py-3.5 flex items-center justify-between text-left group">
           <span class="font-mono text-xs text-muted group-hover:text-signal transition-colors">00</span>
-          <span class="font-grotesk font-semibold text-lg text-bone group-hover:text-signal transition-colors">Intro Universe</span>
+          <span class="font-grotesk font-semibold text-lg text-bone group-hover:text-signal transition-colors">Intro
+            Universe</span>
           <span class="font-mono text-xs text-muted group-hover:translate-x-1 transition-transform">↗</span>
         </button>
-        <button type="button" data-drawer-link="#chapter-01" class="py-3.5 flex items-center justify-between text-left group">
+        <button type="button" data-drawer-link="#chapter-01"
+          class="py-3.5 flex items-center justify-between text-left group">
           <span class="font-mono text-xs text-signal">01</span>
-          <span class="font-grotesk font-semibold text-lg text-bone group-hover:text-signal transition-colors">The Person</span>
+          <span class="font-grotesk font-semibold text-lg text-bone group-hover:text-signal transition-colors">The
+            Person</span>
           <span class="font-mono text-xs text-muted group-hover:translate-x-1 transition-transform">↗</span>
         </button>
-        <button type="button" data-drawer-link="#chapter-02" class="py-3.5 flex items-center justify-between text-left group">
+        <button type="button" data-drawer-link="#chapter-02"
+          class="py-3.5 flex items-center justify-between text-left group">
           <span class="font-mono text-xs text-signal">02</span>
-          <span class="font-grotesk font-semibold text-lg text-bone group-hover:text-signal transition-colors">Operating System</span>
+          <span class="font-grotesk font-semibold text-lg text-bone group-hover:text-signal transition-colors">Operating
+            System</span>
           <span class="font-mono text-xs text-muted group-hover:translate-x-1 transition-transform">↗</span>
         </button>
-        <button type="button" data-drawer-link="#chapter-03" class="py-3.5 flex items-center justify-between text-left group">
+        <button type="button" data-drawer-link="#chapter-03"
+          class="py-3.5 flex items-center justify-between text-left group">
           <span class="font-mono text-xs text-signal">03</span>
-          <span class="font-grotesk font-semibold text-lg text-bone group-hover:text-signal transition-colors">Selected Work</span>
+          <span class="font-grotesk font-semibold text-lg text-bone group-hover:text-signal transition-colors">Selected
+            Work</span>
           <span class="font-mono text-xs text-muted group-hover:translate-x-1 transition-transform">↗</span>
         </button>
-        <button type="button" data-drawer-link="#chapter-04" class="py-3.5 flex items-center justify-between text-left group">
+        <button type="button" data-drawer-link="#chapter-04"
+          class="py-3.5 flex items-center justify-between text-left group">
           <span class="font-mono text-xs text-signal">04</span>
-          <span class="font-grotesk font-semibold text-lg text-bone group-hover:text-signal transition-colors">The Toolkit</span>
+          <span class="font-grotesk font-semibold text-lg text-bone group-hover:text-signal transition-colors">The
+            Toolkit</span>
           <span class="font-mono text-xs text-muted group-hover:translate-x-1 transition-transform">↗</span>
         </button>
-        <button type="button" data-drawer-link="#chapter-05" class="py-3.5 flex items-center justify-between text-left group">
+        <button type="button" data-drawer-link="#chapter-05"
+          class="py-3.5 flex items-center justify-between text-left group">
           <span class="font-mono text-xs text-signal">05</span>
-          <span class="font-grotesk font-semibold text-lg text-bone group-hover:text-signal transition-colors">The Journey</span>
+          <span class="font-grotesk font-semibold text-lg text-bone group-hover:text-signal transition-colors">The
+            Journey</span>
           <span class="font-mono text-xs text-muted group-hover:translate-x-1 transition-transform">↗</span>
         </button>
-        <button type="button" data-drawer-link="#chapter-06" class="py-3.5 flex items-center justify-between text-left group">
+        <button type="button" data-drawer-link="#chapter-06"
+          class="py-3.5 flex items-center justify-between text-left group">
           <span class="font-mono text-xs text-signal">06</span>
-          <span class="font-grotesk font-semibold text-lg text-bone group-hover:text-signal transition-colors">Off-Screen</span>
+          <span
+            class="font-grotesk font-semibold text-lg text-bone group-hover:text-signal transition-colors">Off-Screen</span>
           <span class="font-mono text-xs text-muted group-hover:translate-x-1 transition-transform">↗</span>
         </button>
-        <button type="button" data-drawer-link="#chapter-07" class="py-3.5 flex items-center justify-between text-left group">
+        <button type="button" data-drawer-link="#chapter-07"
+          class="py-3.5 flex items-center justify-between text-left group">
           <span class="font-mono text-xs text-signal">07</span>
-          <span class="font-grotesk font-semibold text-lg text-bone group-hover:text-signal transition-colors">Say Hello</span>
+          <span class="font-grotesk font-semibold text-lg text-bone group-hover:text-signal transition-colors">Say
+            Hello</span>
           <span class="font-mono text-xs text-muted group-hover:translate-x-1 transition-transform">↗</span>
         </button>
       </nav>
@@ -223,8 +206,10 @@
         COOCH BEHAR, WEST BENGAL, INDIA
       </div>
       <div class="flex items-center gap-4 font-mono text-xs">
-        <a href="https://github.com/Sam124-Scorpion" target="_blank" rel="noopener noreferrer" class="text-bone hover:text-signal transition-colors">GITHUB ↗</a>
-        <a href="https://www.linkedin.com/in/sam124/" target="_blank" rel="noopener noreferrer" class="text-bone hover:text-signal transition-colors">LINKEDIN ↗</a>
+        <a href="https://github.com/Sam124-Scorpion" target="_blank" rel="noopener noreferrer"
+          class="text-bone hover:text-signal transition-colors">GITHUB ↗</a>
+        <a href="https://www.linkedin.com/in/sam124/" target="_blank" rel="noopener noreferrer"
+          class="text-bone hover:text-signal transition-colors">LINKEDIN ↗</a>
         <button type="button" data-open-cv class="text-signal hover:underline">OPEN CV ↗</button>
       </div>
     </div>
@@ -237,13 +222,11 @@
     <!-- =======================================================
          STAGE 2: FULL-VIEWPORT INTRO COVER (#intro-cover, 100vh)
     ======================================================== -->
-    <section
-      id="intro-cover"
-      aria-label="Opening Intro Cover"
-      class="relative min-h-screen w-full bg-obsidian hairline-b overflow-hidden flex items-center"
-    >
+    <section id="intro-cover" aria-label="Opening Intro Cover"
+      class="relative min-h-screen w-full bg-obsidian hairline-b overflow-hidden flex items-center">
       <!-- Subtle Minimal Top Corner Stamp During Stage 2 -->
-      <div class="absolute top-6 left-4 sm:left-8 lg:left-12 right-4 sm:right-8 lg:right-12 flex items-center justify-between z-20 pointer-events-none">
+      <div
+        class="absolute top-6 left-4 sm:left-8 lg:left-12 right-4 sm:right-8 lg:right-12 flex items-center justify-between z-20 pointer-events-none">
         <span class="font-display font-extrabold text-sm tracking-wider text-bone/85">
           SOUMIK <span class="text-signal">®</span> // SAM
         </span>
@@ -256,7 +239,8 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
           <!-- Left Column: Stacked 4-Line Editorial Typography -->
           <div class="lg:col-span-6 z-10 flex flex-col justify-center">
-            <div class="intro-reveal font-mono text-[11px] sm:text-xs uppercase tracking-[0.22em] text-signal font-medium mb-5 sm:mb-7">
+            <div
+              class="intro-reveal font-mono text-[11px] sm:text-xs uppercase tracking-[0.22em] text-signal font-medium mb-5 sm:mb-7">
               DATA, DESIGN &amp; CURIOSITY.
             </div>
 
@@ -267,7 +251,8 @@
                 </span>
               </span>
               <span class="block overflow-hidden">
-                <span class="intro-line intro-hollow-stroke block font-display font-extrabold text-[clamp(3.2rem,7.4vw,7rem)]">
+                <span
+                  class="intro-line intro-hollow-stroke block font-display font-extrabold text-[clamp(3.2rem,7.4vw,7rem)]">
                   BEYOND.
                 </span>
               </span>
@@ -277,7 +262,8 @@
                 </span>
               </span>
               <span class="block overflow-hidden">
-                <span class="intro-line block font-serifEditorial italic font-normal text-[clamp(3.7rem,8.4vw,7.9rem)] text-signal tracking-[-0.015em]">
+                <span
+                  class="intro-line block font-serifEditorial italic font-normal text-[clamp(3.7rem,8.4vw,7.9rem)] text-signal tracking-[-0.015em]">
                   MAKE.
                 </span>
               </span>
@@ -285,15 +271,11 @@
 
             <!-- Interactive CTA to Smooth-Scroll into Stage 3 (#hero) -->
             <div class="intro-reveal mt-9 sm:mt-12 flex flex-wrap items-center gap-4">
-              <button
-                type="button"
-                id="enter-universe-btn"
-                data-scroll-to="#hero"
-                data-cursor-label="ENTER"
-                class="magnet-target group inline-flex items-center gap-3.5 px-6 py-3.5 rounded-sm bg-surface hover:bg-surfaceHover hairline-all hover:border-signal transition-all"
-              >
+              <button type="button" id="enter-universe-btn" data-scroll-to="#hero" data-cursor-label="ENTER"
+                class="magnet-target group inline-flex items-center gap-3.5 px-6 py-3.5 rounded-sm bg-surface hover:bg-surfaceHover hairline-all hover:border-signal transition-all">
                 <span class="w-2 h-2 rounded-full bg-signal animate-pulse"></span>
-                <span class="font-mono text-xs uppercase tracking-[0.2em] text-bone group-hover:text-signal transition-colors">
+                <span
+                  class="font-mono text-xs uppercase tracking-[0.2em] text-bone group-hover:text-signal transition-colors">
                   ENTER UNIVERSE ↓
                 </span>
               </button>
@@ -305,61 +287,46 @@
 
           <!-- Right Column: Interactive 360° Three.js Spiral Galaxy & Stylized 3D Humanoid -->
           <div class="lg:col-span-6 relative h-[420px] sm:h-[520px] lg:h-[600px] flex items-center justify-center">
-            <div
-              id="intro-three-stage"
-              data-cursor-label="DRAG"
+            <div id="intro-three-stage" data-cursor-label="DRAG"
               class="webgl-drag-stage relative w-full h-full rounded-lg overflow-hidden"
-              aria-label="Interactive 360-degree 3D Stardust Spiral and Stylized Humanoid Sculpture"
-            >
+              aria-label="Interactive 360-degree 3D Stardust Spiral and Stylized Humanoid Sculpture">
               <canvas id="intro-three-canvas" class="w-full h-full block"></canvas>
 
               <!-- Subtle Signal Target Dot -->
               <div
                 class="pointer-events-none absolute top-[32%] left-[12%] w-7 h-7 rounded-full border border-signal/55 flex items-center justify-center"
-                aria-hidden="true"
-              >
+                aria-hidden="true">
                 <span class="w-1.5 h-1.5 rounded-full bg-signal"></span>
               </div>
 
               <!-- Floating Glass Orbit Badges -->
-              <button
-                type="button"
-                data-scroll-to="#chapter-04"
+              <button type="button" data-scroll-to="#chapter-04"
                 class="intro-orbit-badge absolute top-[22%] left-[24%] w-11 h-11 rounded-full bg-obsidian/80 backdrop-blur-md border border-bone/25 hover:border-signal flex items-center justify-center font-mono text-[11px] text-bone hover:text-signal transition-colors shadow-lg"
-                title="Jump to AI & Machine Learning Stack"
-              >
+                title="Jump to AI & Machine Learning Stack">
                 AI
               </button>
 
-              <button
-                type="button"
-                data-scroll-to="#chapter-04"
+              <button type="button" data-scroll-to="#chapter-04"
                 class="intro-orbit-badge absolute top-[14%] right-[22%] w-11 h-11 rounded-full bg-obsidian/80 backdrop-blur-md border border-bone/25 hover:border-signal flex items-center justify-center font-mono text-[11px] text-bone hover:text-signal transition-colors shadow-lg"
-                title="Jump to RAG & LangChain Stack"
-              >
+                title="Jump to RAG & LangChain Stack">
                 RAG
               </button>
 
-              <button
-                type="button"
-                data-scroll-to="#chapter-04"
+              <button type="button" data-scroll-to="#chapter-04"
                 class="intro-orbit-badge absolute top-[36%] right-[6%] w-11 h-11 rounded-full bg-obsidian/80 backdrop-blur-md border border-signal/50 hover:border-signal flex items-center justify-center font-mono text-[11px] text-signal transition-colors shadow-lg"
-                title="Jump to SQL & Database Stack"
-              >
+                title="Jump to SQL & Database Stack">
                 SQL
               </button>
 
-              <button
-                type="button"
-                data-scroll-to="#chapter-04"
+              <button type="button" data-scroll-to="#chapter-04"
                 class="intro-orbit-badge absolute bottom-[22%] left-[18%] w-11 h-11 rounded-full bg-obsidian/80 backdrop-blur-md border border-bone/25 hover:border-signal flex items-center justify-center font-mono text-[11px] text-bone hover:text-signal transition-colors shadow-lg"
-                title="Jump to Python Stack"
-              >
+                title="Jump to Python Stack">
                 PY
               </button>
 
               <!-- Bottom-Right Micro-Caption -->
-              <div class="pointer-events-none absolute bottom-3 right-3 sm:right-5 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.24em] text-signal/90">
+              <div
+                class="pointer-events-none absolute bottom-3 right-3 sm:right-5 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.24em] text-signal/90">
                 CURIOSITY // BUILT DIFFERENT
               </div>
             </div>
@@ -371,46 +338,43 @@
     <!-- =======================================================
          STAGE 3: MAIN PORTFOLIO HERO (#hero)
     ======================================================== -->
-    <section
-      id="hero"
-      class="relative min-h-screen flex flex-col justify-between pt-24 sm:pt-28 pb-10 hairline-b overflow-hidden scroll-mt-16"
-    >
+    <section id="hero"
+      class="relative min-h-screen flex flex-col justify-between pt-24 sm:pt-28 pb-10 hairline-b overflow-hidden scroll-mt-16">
       <div class="max-w-[1440px] w-full mx-auto px-4 sm:px-8 lg:px-12 my-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           <!-- Left Column: Editorial Display Headline, Subcopy & Actions -->
           <div class="lg:col-span-7 flex flex-col justify-center">
-            <div class="hero-reveal inline-flex items-center gap-2.5 font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-signal mb-6">
+            <div
+              class="hero-reveal inline-flex items-center gap-2.5 font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-signal mb-6">
               <span class="w-2 h-2 rounded-full bg-signal"></span>
               <span>FULL-STACK ENGINEER / DATA &amp; AI DEVELOPER</span>
             </div>
 
-            <h2 class="hero-reveal font-display font-extrabold uppercase text-[clamp(2.6rem,6.1vw,5.6rem)] leading-[0.94] tracking-[-0.03em] text-bone">
+            <h2
+              class="hero-reveal font-display font-extrabold uppercase text-[clamp(2.6rem,6.1vw,5.6rem)] leading-[0.94] tracking-[-0.03em] text-bone">
               MAKE SENSE OF <span class="text-signal">COMPLEX.</span><br />
-              BUILD IT <span class="font-serifEditorial italic font-normal text-[clamp(3rem,6.8vw,6.2rem)] tracking-normal text-bone">USEFUL.</span>
+              BUILD IT <span
+                class="font-serifEditorial italic font-normal text-[clamp(3rem,6.8vw,6.2rem)] tracking-normal text-bone">USEFUL.</span>
             </h2>
 
             <p class="hero-reveal mt-6 sm:mt-8 max-w-2xl text-base sm:text-lg text-bone/80 leading-relaxed font-normal">
-              I am <strong class="text-bone font-medium">Soumik Das (SAM)</strong>—a Full-Stack &amp; Data Science enthusiast specializing in exploratory data analysis (EDA), machine learning pipelines, and RAG implementations—designing and deploying scalable, intelligent applications with <span class="text-bone">Python</span>, <span class="text-bone">Django</span>, and <span class="text-bone">FastAPI</span>.
+              I am <strong class="text-bone font-medium">Soumik Das (SAM)</strong>—a Full-Stack &amp; Data Science
+              enthusiast specializing in exploratory data analysis (EDA), machine learning pipelines, and RAG
+              implementations—designing and deploying scalable, intelligent applications with <span
+                class="text-bone">Python</span>, <span class="text-bone">Django</span>, and <span
+                class="text-bone">FastAPI</span>.
             </p>
 
             <!-- Primary & Secondary CTAs -->
             <div class="hero-reveal mt-8 sm:mt-10 flex flex-wrap items-center gap-4">
-              <button
-                type="button"
-                data-scroll-to="#chapter-03"
-                data-cursor-label="WORK"
-                class="magnet-target inline-flex items-center gap-3 px-7 py-4 rounded-sm bg-signal hover:bg-[#e53e10] text-bone font-mono text-xs uppercase tracking-[0.2em] font-semibold transition-colors shadow-lg shadow-signal/20"
-              >
+              <button type="button" data-scroll-to="#chapter-03" data-cursor-label="WORK"
+                class="magnet-target inline-flex items-center gap-3 px-7 py-4 rounded-sm bg-signal hover:bg-[#e53e10] text-bone font-mono text-xs uppercase tracking-[0.2em] font-semibold transition-colors shadow-lg shadow-signal/20">
                 <span>EXPLORE MY WORK</span>
                 <span>↘</span>
               </button>
 
-              <button
-                type="button"
-                data-open-cv
-                data-cursor-label="CV"
-                class="magnet-target inline-flex items-center gap-3 px-6 py-4 rounded-sm bg-surface hover:bg-surfaceHover hairline-all hover:border-bone/40 text-bone font-mono text-xs uppercase tracking-[0.2em] transition-colors"
-              >
+              <button type="button" data-open-cv data-cursor-label="CV"
+                class="magnet-target inline-flex items-center gap-3 px-6 py-4 rounded-sm bg-surface hover:bg-surfaceHover hairline-all hover:border-bone/40 text-bone font-mono text-xs uppercase tracking-[0.2em] transition-colors">
                 <span>OPEN CV</span>
                 <span class="text-signal">↗</span>
               </button>
@@ -423,29 +387,11 @@
               <!-- Thin Elliptical Orbital SVG Rings Behind Portrait -->
               <svg
                 class="pointer-events-none absolute -inset-10 w-[calc(100%+5rem)] h-[calc(100%+5rem)] overflow-visible"
-                viewBox="0 0 460 540"
-                fill="none"
-                aria-hidden="true"
-              >
-                <ellipse
-                  cx="230"
-                  cy="270"
-                  rx="215"
-                  ry="138"
-                  transform="rotate(-28 230 270)"
-                  stroke="rgba(255, 77, 28, 0.35)"
-                  stroke-width="1"
-                />
-                <ellipse
-                  cx="230"
-                  cy="270"
-                  rx="224"
-                  ry="120"
-                  transform="rotate(24 230 270)"
-                  stroke="rgba(244, 241, 234, 0.16)"
-                  stroke-width="1"
-                  stroke-dasharray="4 6"
-                />
+                viewBox="0 0 460 540" fill="none" aria-hidden="true">
+                <ellipse cx="230" cy="270" rx="215" ry="138" transform="rotate(-28 230 270)"
+                  stroke="rgba(255, 77, 28, 0.35)" stroke-width="1" />
+                <ellipse cx="230" cy="270" rx="224" ry="120" transform="rotate(24 230 270)"
+                  stroke="rgba(244, 241, 234, 0.16)" stroke-width="1" stroke-dasharray="4 6" />
                 <!-- Subtle Particle Dust Dots -->
                 <circle cx="52" cy="118" r="2" fill="#FF4D1C" />
                 <circle cx="408" cy="156" r="2.5" fill="#D1E0A3" />
@@ -458,45 +404,45 @@
 
               <!-- Tilted Front Arch Portrait Frame -->
               <div class="hero-arch-front">
-                <img
-                  src="./assets/portfolio.png"
-                  alt="Soumik Das (SAM) — Full-Stack Engineer and Data / AI Developer"
+                <img src="./assets/portfolio.png" alt="Soumik Das (SAM) — Full-Stack Engineer and Data / AI Developer"
                   class="w-full h-full object-cover object-top scale-[1.02] group-hover:scale-105 transition-transform duration-700"
-                  onerror="this.onerror=null; this.src='https://placehold.co/600x740/141416/F4F1EA?text=SOUMIK+DAS+%2F%2F+SAM';"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-obsidian/65 via-transparent to-transparent pointer-events-none"></div>
-                <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-bone/85">
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x740/141416/F4F1EA?text=SOUMIK+DAS+%2F%2F+SAM';" />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-obsidian/65 via-transparent to-transparent pointer-events-none">
+                </div>
+                <div
+                  class="absolute bottom-3 left-4 right-4 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-bone/85">
                   <span>FIG. 01 — HUMAN IN THE LOOP</span>
                   <span class="text-sage">SAM // 22</span>
                 </div>
               </div>
 
               <!-- Floating Editorial Tags -->
-              <div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-sm bg-obsidian/90 backdrop-blur-md hairline-all font-mono text-[10px] uppercase tracking-[0.18em] text-bone absolute -left-8 top-14 -rotate-3 shadow-xl">
+              <div
+                class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-sm bg-obsidian/90 backdrop-blur-md hairline-all font-mono text-[10px] uppercase tracking-[0.18em] text-bone absolute -left-8 top-14 -rotate-3 shadow-xl">
                 <span class="text-signal">THINK</span> / BUILD
               </div>
 
-              <div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-sm bg-obsidian/90 backdrop-blur-md hairline-all font-mono text-[10px] uppercase tracking-[0.18em] text-sage absolute -left-6 bottom-16 rotate-2 shadow-xl">
+              <div
+                class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-sm bg-obsidian/90 backdrop-blur-md hairline-all font-mono text-[10px] uppercase tracking-[0.18em] text-sage absolute -left-6 bottom-16 rotate-2 shadow-xl">
                 AI <span class="text-signal">*</span> MAGIC
               </div>
 
-              <div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-sm bg-obsidian/90 backdrop-blur-md hairline-all font-mono text-[10px] uppercase tracking-[0.18em] text-bone absolute -right-8 top-1/2 -translate-y-1/2 rotate-2 shadow-xl">
+              <div
+                class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-sm bg-obsidian/90 backdrop-blur-md hairline-all font-mono text-[10px] uppercase tracking-[0.18em] text-bone absolute -right-8 top-1/2 -translate-y-1/2 rotate-2 shadow-xl">
                 DATA <span class="text-signal">+</span> DECISIONS
               </div>
 
               <!-- Interactive Circular "OPEN" Ring Trigger -->
-              <button
-                type="button"
-                data-scroll-to="#chapter-01"
-                data-cursor-label="OPEN"
+              <button type="button" data-scroll-to="#chapter-01" data-cursor-label="OPEN"
                 aria-label="Open Chapter 01 The Person"
-                class="magnet-target absolute -left-7 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-obsidian/80 backdrop-blur-md border border-signal/70 hover:bg-signal text-bone flex items-center justify-center font-mono text-[10px] uppercase tracking-[0.2em] transition-colors shadow-xl"
-              >
+                class="magnet-target absolute -left-7 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-obsidian/80 backdrop-blur-md border border-signal/70 hover:bg-signal text-bone flex items-center justify-center font-mono text-[10px] uppercase tracking-[0.2em] transition-colors shadow-xl">
                 OPEN
               </button>
 
               <!-- Bottom-Right SAM 0001 Monogram Stamp -->
-              <div class="absolute -bottom-5 -right-2 sm:-right-6 px-3 py-1.5 rounded-sm bg-sage text-obsidian font-display font-extrabold text-xs tracking-[0.16em] shadow-lg">
+              <div
+                class="absolute -bottom-5 -right-2 sm:-right-6 px-3 py-1.5 rounded-sm bg-sage text-obsidian font-display font-extrabold text-xs tracking-[0.16em] shadow-lg">
                 SAM <span class="font-mono font-semibold text-[10px] opacity-80">0001</span>
               </div>
             </div>
@@ -505,7 +451,8 @@
       </div>
 
       <!-- Hero Footer Metadata Bar -->
-      <div class="max-w-[1440px] w-full mx-auto px-4 sm:px-8 lg:px-12 pt-8 mt-8 hairline-t flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+      <div
+        class="max-w-[1440px] w-full mx-auto px-4 sm:px-8 lg:px-12 pt-8 mt-8 hairline-t flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
         <div class="flex items-center gap-2 text-bone/90">
           <span class="text-signal">◉</span>
           <span>COOCH BEHAR, INDIA</span>
@@ -516,12 +463,9 @@
       </div>
     </section>
 
- 
-    <section
-      id="orbital-core-section"
-      aria-label="Interactive 3D Dimensional Domain Explorer"
-      class="relative bg-[#080809] hairline-b py-16 sm:py-24 overflow-hidden"
-    >
+
+    <section id="orbital-core-section" aria-label="Interactive 3D Dimensional Domain Explorer"
+      class="relative bg-[#080809] hairline-b py-16 sm:py-24 overflow-hidden">
       <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
         <!-- Section Header -->
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
@@ -540,16 +484,14 @@
 
         <!-- 3D Orbital Stage + Surrounded Domain Nodes -->
         <div class="relative rounded-lg bg-obsidian hairline-all overflow-hidden">
-          <div
-            id="orbital-three-stage"
-            data-cursor-label="360°"
-            class="webgl-drag-stage relative w-full h-[460px] sm:h-[540px] lg:h-[600px]"
-          >
+          <div id="orbital-three-stage" data-cursor-label="360°"
+            class="webgl-drag-stage relative w-full h-[460px] sm:h-[540px] lg:h-[600px]">
             <canvas id="orbital-three-canvas" class="w-full h-full block"></canvas>
 
             <!-- Centered Sage-Lime Circular Hub ("SAM ×") -->
             <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
-              <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-sage text-obsidian flex flex-col items-center justify-center shadow-[0_0_50px_rgba(209,224,163,0.3)] border border-obsidian/20">
+              <div
+                class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-sage text-obsidian flex flex-col items-center justify-center shadow-[0_0_50px_rgba(209,224,163,0.3)] border border-obsidian/20">
                 <span class="font-display font-extrabold text-xl sm:text-2xl tracking-wider leading-none">
                   SAM
                 </span>
@@ -560,48 +502,34 @@
             </div>
 
             <!-- Clickable Domain Node Buttons Positioned Around the 3D Core -->
-            <button
-              type="button"
-              data-node-key="analytics"
-              class="domain-node-btn active absolute top-5 left-4 sm:top-10 sm:left-12 px-4 py-2.5 rounded-sm bg-obsidian/90 backdrop-blur-md border border-signal text-bone font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] transition-all shadow-lg"
-            >
+            <button type="button" data-node-key="analytics"
+              class="domain-node-btn active absolute top-5 left-4 sm:top-10 sm:left-12 px-4 py-2.5 rounded-sm bg-obsidian/90 backdrop-blur-md border border-signal text-bone font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] transition-all shadow-lg">
               ANALYTICS
             </button>
 
-            <button
-              type="button"
-              data-node-key="aiml"
-              class="domain-node-btn absolute top-5 right-4 sm:top-12 sm:right-14 px-4 py-2.5 rounded-sm bg-obsidian/90 backdrop-blur-md border border-bone/25 hover:border-signal text-bone font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] transition-all shadow-lg"
-            >
+            <button type="button" data-node-key="aiml"
+              class="domain-node-btn absolute top-5 right-4 sm:top-12 sm:right-14 px-4 py-2.5 rounded-sm bg-obsidian/90 backdrop-blur-md border border-bone/25 hover:border-signal text-bone font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] transition-all shadow-lg">
               AI / ML
             </button>
 
-            <button
-              type="button"
-              data-node-key="data"
-              class="domain-node-btn absolute bottom-16 left-4 sm:bottom-16 sm:left-14 px-4 py-2.5 rounded-sm bg-obsidian/90 backdrop-blur-md border border-bone/25 hover:border-signal text-bone font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] transition-all shadow-lg"
-            >
+            <button type="button" data-node-key="data"
+              class="domain-node-btn absolute bottom-16 left-4 sm:bottom-16 sm:left-14 px-4 py-2.5 rounded-sm bg-obsidian/90 backdrop-blur-md border border-bone/25 hover:border-signal text-bone font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] transition-all shadow-lg">
               DATA
             </button>
 
-            <button
-              type="button"
-              data-node-key="systems"
-              class="domain-node-btn absolute bottom-16 right-4 sm:bottom-16 sm:right-14 px-4 py-2.5 rounded-sm bg-obsidian/90 backdrop-blur-md border border-bone/25 hover:border-signal text-bone font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] transition-all shadow-lg"
-            >
+            <button type="button" data-node-key="systems"
+              class="domain-node-btn absolute bottom-16 right-4 sm:bottom-16 sm:right-14 px-4 py-2.5 rounded-sm bg-obsidian/90 backdrop-blur-md border border-bone/25 hover:border-signal text-bone font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] transition-all shadow-lg">
               SYSTEMS
             </button>
 
-            <button
-              type="button"
-              data-node-key="fullstack"
-              class="domain-node-btn absolute top-1/2 -translate-y-1/2 right-4 sm:right-10 px-4 py-2.5 rounded-sm bg-obsidian/90 backdrop-blur-md border border-bone/25 hover:border-signal text-bone font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] transition-all shadow-lg"
-            >
+            <button type="button" data-node-key="fullstack"
+              class="domain-node-btn absolute top-1/2 -translate-y-1/2 right-4 sm:right-10 px-4 py-2.5 rounded-sm bg-obsidian/90 backdrop-blur-md border border-bone/25 hover:border-signal text-bone font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] transition-all shadow-lg">
               FULL-STACK
             </button>
 
             <!-- Bottom Center Signal Prompt -->
-            <div class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-surface/90 hairline-all font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.24em] text-signal whitespace-nowrap">
+            <div
+              class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-surface/90 hairline-all font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.24em] text-signal whitespace-nowrap">
               SELECT A NODE
             </div>
           </div>
@@ -621,7 +549,8 @@
                 ENGINEERING FOCUS
               </span>
               <p id="telemetry-desc" class="text-sm text-bone/85 mt-0.5">
-                Exploratory data analysis, statistical hypothesis testing, and Matplotlib visual storytelling to uncover actionable signal before modeling.
+                Exploratory data analysis, statistical hypothesis testing, and Matplotlib visual storytelling to uncover
+                actionable signal before modeling.
               </p>
             </div>
             <div class="md:col-span-3 md:text-right">
@@ -679,14 +608,19 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           <div class="lg:col-span-7">
-            <h2 class="reveal-up font-display font-extrabold uppercase text-[clamp(2rem,4.4vw,3.9rem)] leading-[1.02] tracking-tight text-bone">
-              PART FULL-STACK BUILDER. PART DATA SCIENTIST. <span class="font-serifEditorial italic font-normal text-signal">ALWAYS CURIOUS.</span>
+            <h2
+              class="reveal-up font-display font-extrabold uppercase text-[clamp(2rem,4.4vw,3.9rem)] leading-[1.02] tracking-tight text-bone">
+              PART FULL-STACK BUILDER. PART DATA SCIENTIST. <span
+                class="font-serifEditorial italic font-normal text-signal">ALWAYS CURIOUS.</span>
             </h2>
           </div>
 
           <div class="lg:col-span-5">
             <p class="reveal-up text-base sm:text-lg text-bone/80 leading-relaxed">
-              Data Science graduate (<strong class="text-bone font-medium">B.Tech CSE – Data Science, Brainware University, 2022–2026</strong>) focused on exploratory data analysis, machine learning pipelines, RAG workflows, and full-stack web apps built with Python, Django, FastAPI, and React. Driven by understanding real problems and system constraints before writing code.
+              Data Science graduate (<strong class="text-bone font-medium">B.Tech CSE – Data Science, Brainware
+                University, 2022–2026</strong>) focused on exploratory data analysis, machine learning pipelines, RAG
+              workflows, and full-stack web apps built with Python, Django, FastAPI, and React. Driven by understanding
+              real problems and system constraints before writing code.
             </p>
             <div class="reveal-up mt-6 flex flex-wrap items-center gap-3 font-mono text-xs text-muted">
               <span class="px-3 py-1.5 bg-surface hairline-all text-bone">SOUMIK DAS (SAM)</span>
@@ -729,7 +663,7 @@
       </div>
     </section>
 
-   
+
     <section id="chapter-02" class="py-20 sm:py-28 bg-[#09090A] hairline-b scroll-mt-16">
       <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
         <div class="flex flex-wrap items-center justify-between gap-4 pb-6 hairline-b mb-12">
@@ -741,16 +675,20 @@
           </div>
         </div>
 
-        <h2 class="reveal-up font-display font-extrabold uppercase text-[clamp(2rem,4.3vw,3.7rem)] leading-[1.02] tracking-tight text-bone max-w-4xl mb-14">
-          ASK BETTER. BUILD SMARTER. <span class="font-serifEditorial italic font-normal text-signal">MAKE IT MATTER.</span>
+        <h2
+          class="reveal-up font-display font-extrabold uppercase text-[clamp(2rem,4.3vw,3.7rem)] leading-[1.02] tracking-tight text-bone max-w-4xl mb-14">
+          ASK BETTER. BUILD SMARTER. <span class="font-serifEditorial italic font-normal text-signal">MAKE IT
+            MATTER.</span>
         </h2>
 
         <!-- 4-Step Numbered Editorial Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-bone/15">
           <!-- Step 01 -->
-          <article class="reveal-up p-7 sm:p-8 bg-surface/40 hover:bg-surface transition-colors border-r border-b border-bone/15 flex flex-col justify-between">
+          <article
+            class="reveal-up p-7 sm:p-8 bg-surface/40 hover:bg-surface transition-colors border-r border-b border-bone/15 flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between font-mono text-xs uppercase tracking-[0.18em] text-signal mb-6">
+              <div
+                class="flex items-center justify-between font-mono text-xs uppercase tracking-[0.18em] text-signal mb-6">
                 <span>01 / QUESTION</span>
                 <span>01</span>
               </div>
@@ -767,9 +705,11 @@
           </article>
 
           <!-- Step 02 -->
-          <article class="reveal-up p-7 sm:p-8 bg-surface/40 hover:bg-surface transition-colors border-r border-b border-bone/15 flex flex-col justify-between">
+          <article
+            class="reveal-up p-7 sm:p-8 bg-surface/40 hover:bg-surface transition-colors border-r border-b border-bone/15 flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between font-mono text-xs uppercase tracking-[0.18em] text-signal mb-6">
+              <div
+                class="flex items-center justify-between font-mono text-xs uppercase tracking-[0.18em] text-signal mb-6">
                 <span>02 / SIGNAL</span>
                 <span>02</span>
               </div>
@@ -786,9 +726,11 @@
           </article>
 
           <!-- Step 03 -->
-          <article class="reveal-up p-7 sm:p-8 bg-surface/40 hover:bg-surface transition-colors border-r border-b border-bone/15 flex flex-col justify-between">
+          <article
+            class="reveal-up p-7 sm:p-8 bg-surface/40 hover:bg-surface transition-colors border-r border-b border-bone/15 flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between font-mono text-xs uppercase tracking-[0.18em] text-signal mb-6">
+              <div
+                class="flex items-center justify-between font-mono text-xs uppercase tracking-[0.18em] text-signal mb-6">
                 <span>03 / SYSTEM</span>
                 <span>03</span>
               </div>
@@ -805,9 +747,11 @@
           </article>
 
           <!-- Step 04 -->
-          <article class="reveal-up p-7 sm:p-8 bg-surface/40 hover:bg-surface transition-colors border-r border-b border-bone/15 flex flex-col justify-between">
+          <article
+            class="reveal-up p-7 sm:p-8 bg-surface/40 hover:bg-surface transition-colors border-r border-b border-bone/15 flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between font-mono text-xs uppercase tracking-[0.18em] text-signal mb-6">
+              <div
+                class="flex items-center justify-between font-mono text-xs uppercase tracking-[0.18em] text-signal mb-6">
                 <span>04 / IMPACT</span>
                 <span>04</span>
               </div>
@@ -841,7 +785,8 @@
         </div>
 
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <h2 class="reveal-up font-display font-extrabold uppercase text-[clamp(2rem,4.4vw,3.8rem)] leading-[1.02] tracking-tight text-bone">
+          <h2
+            class="reveal-up font-display font-extrabold uppercase text-[clamp(2rem,4.4vw,3.8rem)] leading-[1.02] tracking-tight text-bone">
             PROBLEMS FRAMED.<br />
             <span class="font-serifEditorial italic font-normal text-signal">SYSTEMS SHIPPED.</span>
           </h2>
@@ -856,14 +801,10 @@
           <article class="case-row py-12 sm:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <!-- Left Visual Mockup -->
             <div class="lg:col-span-6">
-              <div
-                data-case-id="rag-parser"
-                data-cursor-label="OPEN"
-                role="button"
-                tabindex="0"
-                class="case-mockup-card rounded-lg p-6 sm:p-8 cursor-pointer relative overflow-hidden"
-              >
-                <div class="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-6">
+              <div data-case-id="rag-parser" data-cursor-label="OPEN" role="button" tabindex="0"
+                class="case-mockup-card rounded-lg p-6 sm:p-8 cursor-pointer relative overflow-hidden">
+                <div
+                  class="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-6">
                   <span class="flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-signal"></span>
                     <span class="w-2 h-2 rounded-full bg-bone/30"></span>
@@ -879,7 +820,8 @@
                     <span class="font-grotesk font-semibold text-sm text-bone mt-1 block">PDF / DOCX Resumes</span>
                   </div>
                   <div class="flex flex-col items-center justify-center">
-                    <div class="w-20 h-20 rounded-full bg-signal/90 text-obsidian font-display font-extrabold text-sm flex items-center justify-center shadow-[0_0_35px_rgba(255,77,28,0.45)]">
+                    <div
+                      class="w-20 h-20 rounded-full bg-signal/90 text-obsidian font-display font-extrabold text-sm flex items-center justify-center shadow-[0_0_35px_rgba(255,77,28,0.45)]">
                       RAG
                     </div>
                   </div>
@@ -904,21 +846,28 @@
               </div>
 
               <h3 class="font-grotesk font-bold text-3xl sm:text-4xl text-bone leading-tight mb-4">
-                Resume Parser <span class="font-serifEditorial italic font-normal text-signal text-4xl sm:text-5xl">with RAG</span>
+                Resume Parser <span class="font-serifEditorial italic font-normal text-signal text-4xl sm:text-5xl">with
+                  RAG</span>
               </h3>
 
               <p class="text-base text-bone/80 leading-relaxed mb-6">
-                Intelligent resume parsing tool using a Retrieval-Augmented Generation (RAG) pipeline with an LLM-powered conversational interface—eliminating manual keyword scanning and reducing screening time by up to <strong class="text-bone">85%</strong>.
+                Intelligent resume parsing tool using a Retrieval-Augmented Generation (RAG) pipeline with an
+                LLM-powered conversational interface—eliminating manual keyword scanning and reducing screening time by
+                up to <strong class="text-bone">85%</strong>.
               </p>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-sm bg-surface hairline-all mb-6">
                 <div>
-                  <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-signal block">PROBLEM &amp; DECISION</span>
-                  <span class="text-xs sm:text-sm text-bone/80 mt-1 block">Chunked unstructured resume text into dense FAISS vector embeddings queried via LangChain for grounded answers.</span>
+                  <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-signal block">PROBLEM &amp;
+                    DECISION</span>
+                  <span class="text-xs sm:text-sm text-bone/80 mt-1 block">Chunked unstructured resume text into dense
+                    FAISS vector embeddings queried via LangChain for grounded answers.</span>
                 </div>
                 <div>
-                  <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-sage block">MEASURABLE IMPACT</span>
-                  <span class="text-xs sm:text-sm text-bone/80 mt-1 block">Up to 85% reduction in candidate screening time with interactive Streamlit Q&amp;A.</span>
+                  <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-sage block">MEASURABLE
+                    IMPACT</span>
+                  <span class="text-xs sm:text-sm text-bone/80 mt-1 block">Up to 85% reduction in candidate screening
+                    time with interactive Streamlit Q&amp;A.</span>
                 </div>
               </div>
 
@@ -929,11 +878,8 @@
                   <span class="px-2.5 py-1 bg-surface hairline-all text-bone">LangChain</span>
                   <span class="px-2.5 py-1 bg-surface hairline-all text-bone">FAISS</span>
                 </div>
-                <button
-                  type="button"
-                  data-case-id="rag-parser"
-                  class="font-mono text-xs uppercase tracking-[0.18em] text-signal hover:underline"
-                >
+                <button type="button" data-case-id="rag-parser"
+                  class="font-mono text-xs uppercase tracking-[0.18em] text-signal hover:underline">
                   VIEW CASE BRIEF ↗
                 </button>
               </div>
@@ -950,21 +896,28 @@
               </div>
 
               <h3 class="font-grotesk font-bold text-3xl sm:text-4xl text-bone leading-tight mb-4">
-                Housing Price <span class="font-serifEditorial italic font-normal text-signal text-4xl sm:text-5xl">Prediction</span>
+                Housing Price <span
+                  class="font-serifEditorial italic font-normal text-signal text-4xl sm:text-5xl">Prediction</span>
               </h3>
 
               <p class="text-base text-bone/80 leading-relaxed mb-6">
-                End-to-end machine learning housing price predictor achieving <strong class="text-bone">89% prediction accuracy</strong> through systematic feature engineering and hyperparameter tuning, served as a low-latency real-time inference REST API using FastAPI.
+                End-to-end machine learning housing price predictor achieving <strong class="text-bone">89% prediction
+                  accuracy</strong> through systematic feature engineering and hyperparameter tuning, served as a
+                low-latency real-time inference REST API using FastAPI.
               </p>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-sm bg-surface hairline-all mb-6">
                 <div>
-                  <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-signal block">ENGINEERING DECISION</span>
-                  <span class="text-xs sm:text-sm text-bone/80 mt-1 block">Decoupled Scikit-learn preprocessing &amp; regression pipeline behind typed Pydantic FastAPI endpoints.</span>
+                  <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-signal block">ENGINEERING
+                    DECISION</span>
+                  <span class="text-xs sm:text-sm text-bone/80 mt-1 block">Decoupled Scikit-learn preprocessing &amp;
+                    regression pipeline behind typed Pydantic FastAPI endpoints.</span>
                 </div>
                 <div>
-                  <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-sage block">MEASURABLE IMPACT</span>
-                  <span class="text-xs sm:text-sm text-bone/80 mt-1 block">89% validated accuracy with instant JSON inference and automated OpenAPI docs.</span>
+                  <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-sage block">MEASURABLE
+                    IMPACT</span>
+                  <span class="text-xs sm:text-sm text-bone/80 mt-1 block">89% validated accuracy with instant JSON
+                    inference and automated OpenAPI docs.</span>
                 </div>
               </div>
 
@@ -974,11 +927,8 @@
                   <span class="px-2.5 py-1 bg-surface hairline-all text-bone">Python</span>
                   <span class="px-2.5 py-1 bg-surface hairline-all text-bone">Scikit-learn</span>
                 </div>
-                <button
-                  type="button"
-                  data-case-id="housing-api"
-                  class="font-mono text-xs uppercase tracking-[0.18em] text-signal hover:underline"
-                >
+                <button type="button" data-case-id="housing-api"
+                  class="font-mono text-xs uppercase tracking-[0.18em] text-signal hover:underline">
                   VIEW CASE BRIEF ↗
                 </button>
               </div>
@@ -986,14 +936,10 @@
 
             <!-- Right Visual Mockup -->
             <div class="lg:col-span-6 order-1 lg:order-2">
-              <div
-                data-case-id="housing-api"
-                data-cursor-label="OPEN"
-                role="button"
-                tabindex="0"
-                class="case-mockup-card rounded-lg p-6 sm:p-8 cursor-pointer relative overflow-hidden"
-              >
-                <div class="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-6">
+              <div data-case-id="housing-api" data-cursor-label="OPEN" role="button" tabindex="0"
+                class="case-mockup-card rounded-lg p-6 sm:p-8 cursor-pointer relative overflow-hidden">
+                <div
+                  class="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-6">
                   <span class="text-signal">POST /API/V1/PREDICT</span>
                   <span>200 OK · INFERENCE</span>
                 </div>
@@ -1001,10 +947,12 @@
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-center py-4">
                   <div class="p-4 rounded-sm bg-obsidian/90 hairline-all">
                     <span class="font-mono text-[10px] text-muted block">FEATURES</span>
-                    <span class="font-grotesk font-semibold text-sm text-bone mt-1 block">Engineered Spatial &amp; Area Signals</span>
+                    <span class="font-grotesk font-semibold text-sm text-bone mt-1 block">Engineered Spatial &amp; Area
+                      Signals</span>
                   </div>
                   <div class="flex flex-col items-center justify-center">
-                    <div class="w-20 h-20 rounded-full bg-sage text-obsidian font-display font-extrabold text-lg flex items-center justify-center shadow-[0_0_35px_rgba(209,224,163,0.35)]">
+                    <div
+                      class="w-20 h-20 rounded-full bg-sage text-obsidian font-display font-extrabold text-lg flex items-center justify-center shadow-[0_0_35px_rgba(209,224,163,0.35)]">
                       89%
                     </div>
                   </div>
@@ -1026,14 +974,10 @@
           <article class="case-row py-12 sm:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <!-- Left Visual Mockup -->
             <div class="lg:col-span-6">
-              <div
-                data-case-id="expense-manager"
-                data-cursor-label="OPEN"
-                role="button"
-                tabindex="0"
-                class="case-mockup-card rounded-lg p-6 sm:p-8 cursor-pointer relative overflow-hidden"
-              >
-                <div class="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-6">
+              <div data-case-id="expense-manager" data-cursor-label="OPEN" role="button" tabindex="0"
+                class="case-mockup-card rounded-lg p-6 sm:p-8 cursor-pointer relative overflow-hidden">
+                <div
+                  class="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-6">
                   <span class="text-signal">AI FINANCE ENGINE</span>
                   <span>DJANGO + REACT</span>
                 </div>
@@ -1044,7 +988,8 @@
                     <span class="font-grotesk font-semibold text-sm text-bone mt-1 block">10+ Spending Categories</span>
                   </div>
                   <div class="flex flex-col items-center justify-center">
-                    <div class="w-20 h-20 rounded-full bg-signal/90 text-obsidian font-display font-extrabold text-sm flex items-center justify-center shadow-[0_0_35px_rgba(255,77,28,0.45)]">
+                    <div
+                      class="w-20 h-20 rounded-full bg-signal/90 text-obsidian font-display font-extrabold text-sm flex items-center justify-center shadow-[0_0_35px_rgba(255,77,28,0.45)]">
                       AI+UI
                     </div>
                   </div>
@@ -1069,21 +1014,28 @@
               </div>
 
               <h3 class="font-grotesk font-bold text-3xl sm:text-4xl text-bone leading-tight mb-4">
-                Daily Expense <span class="font-serifEditorial italic font-normal text-signal text-4xl sm:text-5xl">Manager</span>
+                Daily Expense <span
+                  class="font-serifEditorial italic font-normal text-signal text-4xl sm:text-5xl">Manager</span>
               </h3>
 
               <p class="text-base text-bone/80 leading-relaxed mb-6">
-                Full-stack personal finance web application with AI-powered financial insights, automated expense categorization across <strong class="text-bone">10+ spending categories</strong>, and AI-driven budget recommendations tailored to user spending patterns.
+                Full-stack personal finance web application with AI-powered financial insights, automated expense
+                categorization across <strong class="text-bone">10+ spending categories</strong>, and AI-driven budget
+                recommendations tailored to user spending patterns.
               </p>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-sm bg-surface hairline-all mb-6">
                 <div>
-                  <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-signal block">ENGINEERING DECISION</span>
-                  <span class="text-xs sm:text-sm text-bone/80 mt-1 block">Paired a Django REST backend and SQLite3 ledger with a responsive React.js analytics dashboard.</span>
+                  <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-signal block">ENGINEERING
+                    DECISION</span>
+                  <span class="text-xs sm:text-sm text-bone/80 mt-1 block">Paired a Django REST backend and SQLite3
+                    ledger with a responsive React.js analytics dashboard.</span>
                 </div>
                 <div>
-                  <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-sage block">MEASURABLE IMPACT</span>
-                  <span class="text-xs sm:text-sm text-bone/80 mt-1 block">Streamlined expense logging across 10+ categories with automated monthly budget guidance.</span>
+                  <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-sage block">MEASURABLE
+                    IMPACT</span>
+                  <span class="text-xs sm:text-sm text-bone/80 mt-1 block">Streamlined expense logging across 10+
+                    categories with automated monthly budget guidance.</span>
                 </div>
               </div>
 
@@ -1094,11 +1046,8 @@
                   <span class="px-2.5 py-1 bg-surface hairline-all text-bone">React.js</span>
                   <span class="px-2.5 py-1 bg-surface hairline-all text-bone">SQLite3</span>
                 </div>
-                <button
-                  type="button"
-                  data-case-id="expense-manager"
-                  class="font-mono text-xs uppercase tracking-[0.18em] text-signal hover:underline"
-                >
+                <button type="button" data-case-id="expense-manager"
+                  class="font-mono text-xs uppercase tracking-[0.18em] text-signal hover:underline">
                   VIEW CASE BRIEF ↗
                 </button>
               </div>
@@ -1115,21 +1064,29 @@
               </div>
 
               <h3 class="font-grotesk font-bold text-3xl sm:text-4xl text-bone leading-tight mb-4">
-                Predo — Attendance <span class="font-serifEditorial italic font-normal text-signal text-4xl sm:text-5xl">Predictor</span>
+                Predo — Attendance <span
+                  class="font-serifEditorial italic font-normal text-signal text-4xl sm:text-5xl">Predictor</span>
               </h3>
 
               <p class="text-base text-bone/80 leading-relaxed mb-6">
-                Interactive attendance forecasting application analyzing student attendance data across <strong class="text-bone">10+ attendance records</strong> with statistical modeling and <strong class="text-bone">5+ Matplotlib visualizations</strong> inside a Streamlit UI for proactive semester planning.
+                Interactive attendance forecasting application analyzing student attendance data across <strong
+                  class="text-bone">10+ attendance records</strong> with statistical modeling and <strong
+                  class="text-bone">5+ Matplotlib visualizations</strong> inside a Streamlit UI for proactive semester
+                planning.
               </p>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-sm bg-surface hairline-all mb-6">
                 <div>
-                  <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-signal block">ENGINEERING DECISION</span>
-                  <span class="text-xs sm:text-sm text-bone/80 mt-1 block">Built vectorized Pandas threshold calculators and multi-chart Matplotlib diagnostics in Streamlit.</span>
+                  <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-signal block">ENGINEERING
+                    DECISION</span>
+                  <span class="text-xs sm:text-sm text-bone/80 mt-1 block">Built vectorized Pandas threshold calculators
+                    and multi-chart Matplotlib diagnostics in Streamlit.</span>
                 </div>
                 <div>
-                  <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-sage block">MEASURABLE IMPACT</span>
-                  <span class="text-xs sm:text-sm text-bone/80 mt-1 block">10+ attendance records modeled with 5+ visual breakdown charts for safe-margin planning.</span>
+                  <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-sage block">MEASURABLE
+                    IMPACT</span>
+                  <span class="text-xs sm:text-sm text-bone/80 mt-1 block">10+ attendance records modeled with 5+ visual
+                    breakdown charts for safe-margin planning.</span>
                 </div>
               </div>
 
@@ -1140,11 +1097,8 @@
                   <span class="px-2.5 py-1 bg-surface hairline-all text-bone">Pandas</span>
                   <span class="px-2.5 py-1 bg-surface hairline-all text-bone">Matplotlib</span>
                 </div>
-                <button
-                  type="button"
-                  data-case-id="predo-app"
-                  class="font-mono text-xs uppercase tracking-[0.18em] text-signal hover:underline"
-                >
+                <button type="button" data-case-id="predo-app"
+                  class="font-mono text-xs uppercase tracking-[0.18em] text-signal hover:underline">
                   VIEW CASE BRIEF ↗
                 </button>
               </div>
@@ -1152,14 +1106,10 @@
 
             <!-- Right Visual Mockup -->
             <div class="lg:col-span-6 order-1 lg:order-2">
-              <div
-                data-case-id="predo-app"
-                data-cursor-label="OPEN"
-                role="button"
-                tabindex="0"
-                class="case-mockup-card rounded-lg p-6 sm:p-8 cursor-pointer relative overflow-hidden"
-              >
-                <div class="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-6">
+              <div data-case-id="predo-app" data-cursor-label="OPEN" role="button" tabindex="0"
+                class="case-mockup-card rounded-lg p-6 sm:p-8 cursor-pointer relative overflow-hidden">
+                <div
+                  class="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-6">
                   <span class="text-signal">PREDO FORECAST ENGINE</span>
                   <span>STREAMLIT + MATPLOTLIB</span>
                 </div>
@@ -1170,7 +1120,8 @@
                     <span class="font-grotesk font-semibold text-sm text-bone mt-1 block">10+ Attendance Records</span>
                   </div>
                   <div class="flex flex-col items-center justify-center">
-                    <div class="w-20 h-20 rounded-full bg-sage text-obsidian font-display font-extrabold text-sm flex items-center justify-center shadow-[0_0_35px_rgba(209,224,163,0.35)]">
+                    <div
+                      class="w-20 h-20 rounded-full bg-sage text-obsidian font-display font-extrabold text-sm flex items-center justify-center shadow-[0_0_35px_rgba(209,224,163,0.35)]">
                       5+ VIZ
                     </div>
                   </div>
@@ -1203,7 +1154,8 @@
           </div>
         </div>
 
-        <h2 class="reveal-up font-display font-extrabold uppercase text-[clamp(2rem,4.3vw,3.7rem)] leading-[1.02] tracking-tight text-bone max-w-4xl mb-14">
+        <h2
+          class="reveal-up font-display font-extrabold uppercase text-[clamp(2rem,4.3vw,3.7rem)] leading-[1.02] tracking-tight text-bone max-w-4xl mb-14">
           GOOD TOOLS. <span class="font-serifEditorial italic font-normal text-signal">BETTER QUESTIONS.</span>
         </h2>
 
@@ -1214,9 +1166,12 @@
               01 // LANGUAGES &amp; SCRIPTING
             </div>
             <div class="flex flex-wrap gap-2.5">
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">Python</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">SQL</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">C++</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">Python</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">SQL</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">C++</span>
             </div>
           </div>
 
@@ -1226,17 +1181,28 @@
               02 // FRAMEWORKS, LIBRARIES &amp; AI/DATA
             </div>
             <div class="flex flex-wrap gap-2.5">
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">Django</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">FastAPI</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">React</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">Streamlit</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">LangChain</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">FAISS</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">Pandas</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">Scikit-Learn</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">Matplotlib</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">EDA</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">RAG</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">Django</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">FastAPI</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">React</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">Streamlit</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">LangChain</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">FAISS</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">Pandas</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">Scikit-Learn</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">Matplotlib</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">EDA</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">RAG</span>
             </div>
           </div>
 
@@ -1246,13 +1212,20 @@
               03 // DATABASES &amp; TOOLS
             </div>
             <div class="flex flex-wrap gap-2.5">
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">PostgreSQL</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">MySQL</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">SQLite</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">MongoDB</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">Git</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">GitHub</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">Postman</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">PostgreSQL</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">MySQL</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">SQLite</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">MongoDB</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">Git</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">GitHub</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-xs sm:text-sm text-bone transition-colors">Postman</span>
             </div>
           </div>
 
@@ -1262,9 +1235,15 @@
               04 // LANGUAGES SPOKEN
             </div>
             <div class="flex flex-wrap gap-2.5">
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-sage font-mono text-xs sm:text-sm text-bone transition-colors">Bengali (Native)</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-sage font-mono text-xs sm:text-sm text-bone transition-colors">English (Professional)</span>
-              <span class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-sage font-mono text-xs sm:text-sm text-bone transition-colors">Hindi (Conversational)</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-sage font-mono text-xs sm:text-sm text-bone transition-colors">Bengali
+                (Native)</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-sage font-mono text-xs sm:text-sm text-bone transition-colors">English
+                (Professional)</span>
+              <span
+                class="px-4 py-2 rounded-sm bg-obsidian hairline-all hover:border-sage font-mono text-xs sm:text-sm text-bone transition-colors">Hindi
+                (Conversational)</span>
             </div>
           </div>
         </div>
@@ -1283,7 +1262,8 @@
           </div>
         </div>
 
-        <h2 class="reveal-up font-display font-extrabold uppercase text-[clamp(2rem,4.3vw,3.7rem)] leading-[1.02] tracking-tight text-bone max-w-4xl mb-14">
+        <h2
+          class="reveal-up font-display font-extrabold uppercase text-[clamp(2rem,4.3vw,3.7rem)] leading-[1.02] tracking-tight text-bone max-w-4xl mb-14">
           EVERY CHAPTER <span class="font-serifEditorial italic font-normal text-signal">ADDS SIGNAL.</span>
         </h2>
 
@@ -1304,7 +1284,9 @@
               </p>
             </div>
             <div class="lg:col-span-5 text-sm sm:text-base text-bone/80 leading-relaxed">
-              Built an AI-integrated expense management system using Python/Django with MVT architecture and 8+ REST APIs, cutting manual data entry by 85%; completed a 3-month internship earning dual certifications from the industry partner and university.
+              Built an AI-integrated expense management system using Python/Django with MVT architecture and 8+ REST
+              APIs, cutting manual data entry by 85%; completed a 3-month internship earning dual certifications from
+              the industry partner and university.
             </div>
           </div>
 
@@ -1323,7 +1305,9 @@
               </p>
             </div>
             <div class="lg:col-span-5 text-sm sm:text-base text-bone/80 leading-relaxed">
-              Built an end-to-end sentiment analysis pipeline using Python, Pandas, and Scikit-Learn achieving 87%+ accuracy through iterative preprocessing, hyperparameter tuning, real-time evaluation, and visual performance reporting.
+              Built an end-to-end sentiment analysis pipeline using Python, Pandas, and Scikit-Learn achieving 87%+
+              accuracy through iterative preprocessing, hyperparameter tuning, real-time evaluation, and visual
+              performance reporting.
             </div>
           </div>
 
@@ -1343,9 +1327,11 @@
             </div>
             <div class="lg:col-span-5 flex items-center justify-between">
               <span class="text-sm sm:text-base text-bone/80">
-                Computer Science &amp; Engineering specializing in Data Science, Machine Learning, and Full-Stack Systems.
+                Computer Science &amp; Engineering specializing in Data Science, Machine Learning, and Full-Stack
+                Systems.
               </span>
-              <span class="ml-4 shrink-0 px-3.5 py-1.5 rounded-sm bg-surface hairline-all font-mono text-xs font-semibold text-sage">
+              <span
+                class="ml-4 shrink-0 px-3.5 py-1.5 rounded-sm bg-surface hairline-all font-mono text-xs font-semibold text-sage">
                 9.02/10 CGPA
               </span>
             </div>
@@ -1369,7 +1355,8 @@
               <span class="text-sm text-bone/75">
                 Higher Secondary Science &amp; Mathematics foundation.
               </span>
-              <span class="ml-4 shrink-0 px-3.5 py-1.5 rounded-sm bg-surface hairline-all font-mono text-xs font-semibold text-bone">
+              <span
+                class="ml-4 shrink-0 px-3.5 py-1.5 rounded-sm bg-surface hairline-all font-mono text-xs font-semibold text-bone">
                 82%
               </span>
             </div>
@@ -1393,7 +1380,8 @@
               <span class="text-sm text-bone/75">
                 Secondary examination with strong analytical and quantitative aptitude.
               </span>
-              <span class="ml-4 shrink-0 px-3.5 py-1.5 rounded-sm bg-surface hairline-all font-mono text-xs font-semibold text-bone">
+              <span
+                class="ml-4 shrink-0 px-3.5 py-1.5 rounded-sm bg-surface hairline-all font-mono text-xs font-semibold text-bone">
                 84%
               </span>
             </div>
@@ -1402,7 +1390,7 @@
       </div>
     </section>
 
-  
+
     <section id="chapter-06" class="py-20 sm:py-28 bg-[#09090A] hairline-b scroll-mt-16">
       <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
         <div class="flex flex-wrap items-center justify-between gap-4 pb-6 hairline-b mb-12">
@@ -1416,13 +1404,16 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start mb-12">
           <div class="lg:col-span-6">
-            <h2 class="reveal-up font-display font-extrabold uppercase text-[clamp(2rem,4.2vw,3.5rem)] leading-[1.04] tracking-tight text-bone">
+            <h2
+              class="reveal-up font-display font-extrabold uppercase text-[clamp(2rem,4.2vw,3.5rem)] leading-[1.04] tracking-tight text-bone">
               SHARP SYSTEMS NEED <span class="font-serifEditorial italic font-normal text-signal">ANALOG RESETS.</span>
             </h2>
           </div>
           <div class="lg:col-span-6">
             <p class="reveal-up text-base sm:text-lg text-bone/80 leading-relaxed">
-              Away from datasets, vector indices, and backend endpoints, I recharge through editorial visual craft, interactive UI micro-experiments, and slow walks across my city—keeping observation sharp so every technical system feels intuitive and human.
+              Away from datasets, vector indices, and backend endpoints, I recharge through editorial visual craft,
+              interactive UI micro-experiments, and slow walks across my city—keeping observation sharp so every
+              technical system feels intuitive and human.
             </p>
           </div>
         </div>
@@ -1434,7 +1425,8 @@
               Editorial Grid &amp; Motion Studies
             </h3>
             <p class="text-sm text-bone/75 leading-relaxed">
-              Exploring Swiss typography, spatial particle shaders, and tactile micro-interactions that turn raw software into memorable interfaces.
+              Exploring Swiss typography, spatial particle shaders, and tactile micro-interactions that turn raw
+              software into memorable interfaces.
             </p>
           </div>
 
@@ -1444,7 +1436,8 @@
               Deconstructing Real Workflows
             </h3>
             <p class="text-sm text-bone/75 leading-relaxed">
-              Observing everyday bottlenecks—from personal budgeting to academic planning—and sketching lightweight tools that remove friction.
+              Observing everyday bottlenecks—from personal budgeting to academic planning—and sketching lightweight
+              tools that remove friction.
             </p>
           </div>
 
@@ -1454,7 +1447,8 @@
               Music, Sketches &amp; Night Walks
             </h3>
             <p class="text-sm text-bone/75 leading-relaxed">
-              Stepping away from the screen in my city to clear mental cache, reflect on tough architectural problems, and return with fresh clarity.
+              Stepping away from the screen in my city to clear mental cache, reflect on tough architectural problems,
+              and return with fresh clarity.
             </p>
           </div>
         </div>
@@ -1475,17 +1469,14 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-16">
           <div class="lg:col-span-8">
-            <h2 class="reveal-up font-display font-extrabold uppercase text-[clamp(2.4rem,5.8vw,5.4rem)] leading-[0.95] tracking-tight text-bone">
+            <h2
+              class="reveal-up font-display font-extrabold uppercase text-[clamp(2.4rem,5.8vw,5.4rem)] leading-[0.95] tracking-tight text-bone">
               LET’S BUILD SOMETHING <span class="font-serifEditorial italic font-normal text-signal">USEFUL.</span>
             </h2>
           </div>
           <div class="lg:col-span-4 lg:text-right">
-            <button
-              type="button"
-              data-open-cv
-              data-cursor-label="CV"
-              class="magnet-target inline-flex items-center gap-3 px-7 py-4 rounded-sm bg-signal hover:bg-[#e53e10] text-bone font-mono text-xs uppercase tracking-[0.2em] font-semibold transition-colors"
-            >
+            <button type="button" data-open-cv data-cursor-label="CV"
+              class="magnet-target inline-flex items-center gap-3 px-7 py-4 rounded-sm bg-signal hover:bg-[#e53e10] text-bone font-mono text-xs uppercase tracking-[0.2em] font-semibold transition-colors">
               <span>DOWNLOAD / OPEN CV</span>
               <span>↗</span>
             </button>
@@ -1500,18 +1491,13 @@
               <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-signal block mb-2">
                 EMAIL CHANNEL
               </span>
-              <a
-                href="mailto:soumikdas261@gmail.com"
-                class="font-grotesk font-semibold text-base sm:text-lg text-bone hover:text-signal transition-colors break-all"
-              >
+              <a href="mailto:soumikdas261@gmail.com"
+                class="font-grotesk font-semibold text-base sm:text-lg text-bone hover:text-signal transition-colors break-all">
                 soumikdas261@gmail.com
               </a>
             </div>
-            <button
-              type="button"
-              data-copy="soumikdas261@gmail.com"
-              class="mt-5 self-start px-3 py-1.5 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-[10px] uppercase tracking-[0.18em] text-bone/85 hover:text-signal transition-colors"
-            >
+            <button type="button" data-copy="soumikdas261@gmail.com"
+              class="mt-5 self-start px-3 py-1.5 rounded-sm bg-obsidian hairline-all hover:border-signal font-mono text-[10px] uppercase tracking-[0.18em] text-bone/85 hover:text-signal transition-colors">
               COPY EMAIL ⧉
             </button>
           </div>
@@ -1539,17 +1525,14 @@
           </div> -->
 
           <!-- LinkedIn -->
-          <a
-            href="https://www.linkedin.com/in/sam124/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group p-6 sm:p-8 bg-surface/50 hover:bg-surface transition-colors border-r border-b border-bone/15 flex flex-col justify-between"
-          >
+          <a href="https://www.linkedin.com/in/sam124/" target="_blank" rel="noopener noreferrer"
+            class="group p-6 sm:p-8 bg-surface/50 hover:bg-surface transition-colors border-r border-b border-bone/15 flex flex-col justify-between">
             <div>
               <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-signal block mb-2">
                 LINKEDIN
               </span>
-              <span class="font-grotesk font-semibold text-base sm:text-lg text-bone group-hover:text-signal transition-colors">
+              <span
+                class="font-grotesk font-semibold text-base sm:text-lg text-bone group-hover:text-signal transition-colors">
                 linkedin.com/in/sam124
               </span>
             </div>
@@ -1559,17 +1542,14 @@
           </a>
 
           <!-- GitHub -->
-          <a
-            href="https://github.com/Sam124-Scorpion"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group p-6 sm:p-8 bg-surface/50 hover:bg-surface transition-colors border-r border-b border-bone/15 flex flex-col justify-between"
-          >
+          <a href="https://github.com/Sam124-Scorpion" target="_blank" rel="noopener noreferrer"
+            class="group p-6 sm:p-8 bg-surface/50 hover:bg-surface transition-colors border-r border-b border-bone/15 flex flex-col justify-between">
             <div>
               <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-signal block mb-2">
                 GITHUB
               </span>
-              <span class="font-grotesk font-semibold text-base sm:text-lg text-bone group-hover:text-signal transition-colors">
+              <span
+                class="font-grotesk font-semibold text-base sm:text-lg text-bone group-hover:text-signal transition-colors">
                 github.com/Sam124-Scorpion
               </span>
             </div>
@@ -1580,15 +1560,13 @@
         </div>
 
         <!-- Bottom Copyright & Back-to-Top -->
-        <div class="mt-12 pt-8 hairline-t flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-muted">
+        <div
+          class="mt-12 pt-8 hairline-t flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-muted">
           <div>
             © 2026 SOUMIK DAS (SAM) — COOCH BEHAR, WEST BENGAL, INDIA.
           </div>
-          <button
-            type="button"
-            data-scroll-to="#intro-cover"
-            class="text-bone hover:text-signal uppercase tracking-[0.18em] transition-colors"
-          >
+          <button type="button" data-scroll-to="#intro-cover"
+            class="text-bone hover:text-signal uppercase tracking-[0.18em] transition-colors">
             BACK TO TOP ↑
           </button>
         </div>
@@ -1597,14 +1575,10 @@
   </main>
 
 
-  <div
-    id="case-modal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="case-modal-title"
-    class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6"
-  >
-    <div class="bg-[#0E0E10] hairline-all rounded-lg max-w-2xl w-full p-6 sm:p-9 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+  <div id="case-modal" role="dialog" aria-modal="true" aria-labelledby="case-modal-title"
+    class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6">
+    <div
+      class="bg-[#0E0E10] hairline-all rounded-lg max-w-2xl w-full p-6 sm:p-9 relative shadow-2xl max-h-[90vh] overflow-y-auto">
       <div class="flex items-start justify-between gap-4 pb-5 hairline-b">
         <div>
           <span id="case-modal-tag" class="font-mono text-[11px] uppercase tracking-[0.2em] text-signal block">
@@ -1614,11 +1588,8 @@
             Project Title
           </h3>
         </div>
-        <button
-          type="button"
-          id="close-case-modal"
-          class="px-3 py-1.5 rounded-sm bg-surface hairline-all hover:border-signal font-mono text-xs text-bone hover:text-signal"
-        >
+        <button type="button" id="close-case-modal"
+          class="px-3 py-1.5 rounded-sm bg-surface hairline-all hover:border-signal font-mono text-xs text-bone hover:text-signal">
           ESC ×
         </button>
       </div>
@@ -1644,12 +1615,8 @@
         </div>
         <div class="pt-4 hairline-t flex flex-wrap items-center justify-between gap-4">
           <div id="case-modal-stack" class="flex flex-wrap gap-2 font-mono text-xs"></div>
-          <a
-            href="https://github.com/Sam124-Scorpion"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="font-mono text-xs uppercase tracking-[0.18em] text-signal hover:underline"
-          >
+          <a href="https://github.com/Sam124-Scorpion" target="_blank" rel="noopener noreferrer"
+            class="font-mono text-xs uppercase tracking-[0.18em] text-signal hover:underline">
             VIEW ON GITHUB ↗
           </a>
         </div>
@@ -1658,14 +1625,10 @@
   </div>
 
 
-  <div
-    id="cv-modal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="cv-modal-heading"
-    class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6"
-  >
-    <div class="bg-[#0E0E10] hairline-all rounded-lg max-w-3xl w-full p-6 sm:p-9 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+  <div id="cv-modal" role="dialog" aria-modal="true" aria-labelledby="cv-modal-heading"
+    class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6">
+    <div
+      class="bg-[#0E0E10] hairline-all rounded-lg max-w-3xl w-full p-6 sm:p-9 relative shadow-2xl max-h-[90vh] overflow-y-auto">
       <div class="flex flex-wrap items-center justify-between gap-4 pb-5 hairline-b">
         <div>
           <span class="font-mono text-[11px] uppercase tracking-[0.2em] text-signal block">
@@ -1676,25 +1639,16 @@
           </h3>
         </div>
         <div class="flex items-center gap-2.5">
-          <a
-            href="./assets/Soumik_Das_Resume_New.pdf"
-            download="Soumik_Das_Resume_New.pdf"
-            class="px-4 py-2 rounded-sm bg-signal hover:bg-[#e53e10] font-mono text-xs uppercase tracking-[0.16em] text-bone font-semibold transition-colors"
-          >
+          <a href="./assets/Soumik_Das_Resume_New.pdf" download="Soumik_Das_Resume_New.pdf"
+            class="px-4 py-2 rounded-sm bg-signal hover:bg-[#e53e10] font-mono text-xs uppercase tracking-[0.16em] text-bone font-semibold transition-colors">
             DOWNLOAD RESUME ↓
           </a>
-          <button
-            type="button"
-            onclick="window.print()"
-            class="px-4 py-2 rounded-sm bg-surface hairline-all hover:border-bone/40 font-mono text-xs uppercase tracking-[0.16em] text-bone transition-colors"
-          >
+          <button type="button" onclick="window.print()"
+            class="px-4 py-2 rounded-sm bg-surface hairline-all hover:border-bone/40 font-mono text-xs uppercase tracking-[0.16em] text-bone transition-colors">
             PRINT / PDF
           </button>
-          <button
-            type="button"
-            id="close-cv-modal"
-            class="px-3 py-2 rounded-sm bg-surface hairline-all hover:border-signal font-mono text-xs text-bone hover:text-signal"
-          >
+          <button type="button" id="close-cv-modal"
+            class="px-3 py-2 rounded-sm bg-surface hairline-all hover:border-signal font-mono text-xs text-bone hover:text-signal">
             ×
           </button>
         </div>
@@ -1717,9 +1671,12 @@
         <div>
           <h4 class="font-mono text-xs uppercase tracking-[0.18em] text-signal mb-2">EDUCATION</h4>
           <ul class="space-y-1.5">
-            <li><strong class="text-bone">B.Tech CSE (Data Science)</strong> — Brainware University (2022–2026) · <span class="text-sage">9.02/10 CGPA</span></li>
-            <li><strong class="text-bone">Higher Secondary (12th)</strong> — Cooch Behar Rambhola High School, WBCHSE (2020–2022) · 82%</li>
-            <li><strong class="text-bone">Secondary (10th)</strong> — Maharaja Nripendra Narayan High School, WBBSE (2018–2020) · 84%</li>
+            <li><strong class="text-bone">B.Tech CSE (Data Science)</strong> — Brainware University (2022–2026) · <span
+                class="text-sage">9.02/10 CGPA</span></li>
+            <li><strong class="text-bone">Higher Secondary (12th)</strong> — Cooch Behar Rambhola High School, WBCHSE
+              (2020–2022) · 82%</li>
+            <li><strong class="text-bone">Secondary (10th)</strong> — Maharaja Nripendra Narayan High School, WBBSE
+              (2018–2020) · 84%</li>
           </ul>
         </div>
 
@@ -1727,12 +1684,18 @@
           <h4 class="font-mono text-xs uppercase tracking-[0.18em] text-signal mb-2">EXPERIENCE</h4>
           <div class="space-y-3">
             <div>
-              <div class="font-semibold text-bone">Industry Intern - Web Dev (Django + AI) · Euphoria GenX Pvt. Ltd. (Brainware University) <span class="font-mono text-xs text-muted">(Aug 2025 – Nov 2025)</span></div>
-              <p class="text-xs sm:text-sm text-bone/75 mt-0.5">Built an AI-integrated expense management system using Python/Django (MVT) and 8+ REST APIs, cutting manual data entry by 85% and earning dual certifications.</p>
+              <div class="font-semibold text-bone">Industry Intern - Web Dev (Django + AI) · Euphoria GenX Pvt. Ltd.
+                (Brainware University) <span class="font-mono text-xs text-muted">(Aug 2025 – Nov 2025)</span></div>
+              <p class="text-xs sm:text-sm text-bone/75 mt-0.5">Built an AI-integrated expense management system using
+                Python/Django (MVT) and 8+ REST APIs, cutting manual data entry by 85% and earning dual certifications.
+              </p>
             </div>
             <div>
-              <div class="font-semibold text-bone">Machine Learning Intern · Indus Net Technologies <span class="font-mono text-xs text-muted">(Feb 2025 – Mar 2025)</span></div>
-              <p class="text-xs sm:text-sm text-bone/75 mt-0.5">Built an end-to-end sentiment analysis pipeline in Python, Pandas, and Scikit-Learn achieving 87%+ accuracy via preprocessing, hyperparameter tuning, and visual performance reporting.</p>
+              <div class="font-semibold text-bone">Machine Learning Intern · Indus Net Technologies <span
+                  class="font-mono text-xs text-muted">(Feb 2025 – Mar 2025)</span></div>
+              <p class="text-xs sm:text-sm text-bone/75 mt-0.5">Built an end-to-end sentiment analysis pipeline in
+                Python, Pandas, and Scikit-Learn achieving 87%+ accuracy via preprocessing, hyperparameter tuning, and
+                visual performance reporting.</p>
             </div>
           </div>
         </div>
@@ -1740,10 +1703,14 @@
         <div>
           <h4 class="font-mono text-xs uppercase tracking-[0.18em] text-signal mb-2">KEY PROJECTS</h4>
           <ul class="space-y-1.5 text-xs sm:text-sm">
-            <li><strong class="text-bone">Resume Parser with RAG (Architect):</strong> Python, Streamlit, LangChain, FAISS — up to 85% manual screening time reduction.</li>
-            <li><strong class="text-bone">Housing Price Prediction (Developer):</strong> FastAPI, Python, Scikit-learn — 89% prediction accuracy served via REST API.</li>
-            <li><strong class="text-bone">Daily Expense Manager (Developer):</strong> Python, Django, React.js, SQLite3 — 10+ spending categories &amp; AI budget insights.</li>
-            <li><strong class="text-bone">Predo — Attendance Predictor (Developer):</strong> Python, Streamlit, Pandas, Matplotlib — 10+ attendance records &amp; 5+ visualizations.</li>
+            <li><strong class="text-bone">Resume Parser with RAG (Architect):</strong> Python, Streamlit, LangChain,
+              FAISS — up to 85% manual screening time reduction.</li>
+            <li><strong class="text-bone">Housing Price Prediction (Developer):</strong> FastAPI, Python, Scikit-learn —
+              89% prediction accuracy served via REST API.</li>
+            <li><strong class="text-bone">Daily Expense Manager (Developer):</strong> Python, Django, React.js, SQLite3
+              — 10+ spending categories &amp; AI budget insights.</li>
+            <li><strong class="text-bone">Predo — Attendance Predictor (Developer):</strong> Python, Streamlit, Pandas,
+              Matplotlib — 10+ attendance records &amp; 5+ visualizations.</li>
           </ul>
         </div>
 
@@ -1751,8 +1718,10 @@
           <h4 class="font-mono text-xs uppercase tracking-[0.18em] text-signal mb-2">TECHNICAL TOOLKIT</h4>
           <p class="text-xs sm:text-sm">
             <strong class="text-bone">Languages:</strong> Python, SQL, C++ ·
-            <strong class="text-bone">Frameworks &amp; AI/Data:</strong> Django, FastAPI, React, Streamlit, LangChain, FAISS, Pandas, Scikit-Learn, Matplotlib, EDA, RAG ·
-            <strong class="text-bone">Databases &amp; Tools:</strong> PostgreSQL, MySQL, SQLite, MongoDB, Git, GitHub, Postman ·
+            <strong class="text-bone">Frameworks &amp; AI/Data:</strong> Django, FastAPI, React, Streamlit, LangChain,
+            FAISS, Pandas, Scikit-Learn, Matplotlib, EDA, RAG ·
+            <strong class="text-bone">Databases &amp; Tools:</strong> PostgreSQL, MySQL, SQLite, MongoDB, Git, GitHub,
+            Postman ·
             <strong class="text-bone">Spoken:</strong> Bengali, English, Hindi
           </p>
         </div>
@@ -1761,16 +1730,13 @@
   </div>
 
   <!-- Toast Notification Banner -->
-  <div
-    id="toast-banner"
-    role="status"
-    aria-live="polite"
-    class="fixed bottom-6 right-6 z-50 px-4 py-3 rounded-sm bg-surface hairline-all border-signal/70 font-mono text-xs uppercase tracking-[0.16em] text-bone shadow-2xl translate-y-20 opacity-0 pointer-events-none transition-all duration-300"
-  >
+  <div id="toast-banner" role="status" aria-live="polite"
+    class="fixed bottom-6 right-6 z-50 px-4 py-3 rounded-sm bg-surface hairline-all border-signal/70 font-mono text-xs uppercase tracking-[0.16em] text-bone shadow-2xl translate-y-20 opacity-0 pointer-events-none transition-all duration-300">
     COPIED TO CLIPBOARD
   </div>
 
 
   <script src="./scripts/main.js"></script>
 </body>
+
 </html>
